@@ -7,6 +7,8 @@ import promptObjeciones from '@/agents/objeciones'
 import promptLinkedin from '@/agents/linkedin'
 import promptProspecto from '@/agents/prospecto'
 import promptConexion from '@/agents/conexion'
+import promptSituacion from '@/agents/situacion'
+import promptConciencia from '@/agents/conciencia'
 
 const agentes = {
   seguimiento: promptSeguimiento,
@@ -14,6 +16,8 @@ const agentes = {
   linkedin: promptLinkedin,
   prospecto: promptProspecto,
   conexion: promptConexion,
+  situacion: promptSituacion,
+  conciencia: promptConciencia,
 }
 
 export async function POST(request) {
