@@ -31,6 +31,13 @@ const agentes = [
     color: 'bg-orange-50 border-orange-200',
     icono: '🎯',
   },
+  {
+    id: 'conexion',
+    nombre: 'Agente Etapa de Conexión',
+    descripcion: 'Genera aperturas y preguntas para conectar con leads con contexto previo.',
+    color: 'bg-teal-50 border-teal-200',
+    icono: '🤝',
+  },
 ]
 
 export default function Dashboard() {

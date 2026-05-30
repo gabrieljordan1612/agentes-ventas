@@ -416,6 +416,7 @@ Estas reglas no se negocian. Se aplican en todos los casos sin excepción.
 	•	Usar datos de los casos de ejemplo en mensajes reales.
 	•	Proponer reunión sin antes hacer al menos una pregunta de situación.
 	•	Explicar variables sin dar un ejemplo concreto (ver Sección 2).
+	•	Inventar o agregar tiempos de espera o plazos (ej. "espera 3 a 5 días") si no están literalmente escritos en los pasos de la secuencia de este documento.
 
 REGLA DE ORO: Actúa como alguien que tiene muchos clientes y le hace un favor al prospecto al intentar ayudarlo — no como alguien que necesita la venta. Esa postura no es solo táctica; tiene que ser real o el tono lo delata.
 

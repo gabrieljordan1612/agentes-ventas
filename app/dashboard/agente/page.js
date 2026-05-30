@@ -8,6 +8,7 @@ const nombresAgentes = {
   objeciones: 'Agente de Objeciones',
   linkedin: 'Agente de LinkedIn',
   prospecto: 'Agente de Prospección',
+  conexion: 'Agente Etapa de Conexión',
 }
 
 function AgenteChat() {

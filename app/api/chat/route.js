@@ -6,12 +6,14 @@ import promptSeguimiento from '@/agents/seguimiento'
 import promptObjeciones from '@/agents/objeciones'
 import promptLinkedin from '@/agents/linkedin'
 import promptProspecto from '@/agents/prospecto'
+import promptConexion from '@/agents/conexion'
 
 const agentes = {
   seguimiento: promptSeguimiento,
   objeciones: promptObjeciones,
   linkedin: promptLinkedin,
   prospecto: promptProspecto,
+  conexion: promptConexion,
 }
 
 export async function POST(request) {
@@ -64,11 +66,25 @@ export async function POST(request) {
 
     const apiKey = desencriptarApiKey(usuario.api_key_encriptada)
 
-    const contextoVendedor = usuario.contexto_vendedor
-      ? `\n\nCONTEXTO DEL VENDEDOR:\n${usuario.contexto_vendedor}`
-      : ''
+    let contextoVendedorStr = ''
+    if (usuario.contexto_vendedor) {
+      try {
+        const parsed = JSON.parse(usuario.contexto_vendedor)
+        contextoVendedorStr = `\n\nCONTEXTO DEL VENDEDOR:\n`
+        if (parsed.nombre) contextoVendedorStr += `- Nombre: ${parsed.nombre}\n`
+        if (parsed.empresa) contextoVendedorStr += `- Empresa: ${parsed.empresa}\n`
+        if (parsed.pais) contextoVendedorStr += `- País/Ciudad: ${parsed.pais}\n`
+        if (parsed.problema) contextoVendedorStr += `- Problema que resuelve: ${parsed.problema}\n`
+        if (parsed.cliente_ideal) contextoVendedorStr += `- Cliente ideal: ${parsed.cliente_ideal}\n`
+        if (parsed.canal_principal) contextoVendedorStr += `- Canal principal de ventas: ${parsed.canal_principal}\n`
+        if (parsed.numero_contacto) contextoVendedorStr += `- Número de contacto: ${parsed.numero_contacto}\n`
+        if (parsed.contexto_legacy) contextoVendedorStr += `\nContexto Adicional:\n${parsed.contexto_legacy}\n`
+      } catch (e) {
+        contextoVendedorStr = `\n\nCONTEXTO DEL VENDEDOR:\n${usuario.contexto_vendedor}`
+      }
+    }
 
-    const promptFinal = systemPrompt + contextoVendedor
+    const promptFinal = systemPrompt + contextoVendedorStr
     const mensajesParaClaude = messages.slice(-6)
 
     // El agente de objeciones necesita más tokens porque entrega guiones completos
