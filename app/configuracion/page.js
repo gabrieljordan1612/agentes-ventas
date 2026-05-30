@@ -118,7 +118,7 @@ export default function Configuracion() {
               <textarea
                 value={contexto}
                 onChange={e => setContexto(e.target.value)}
-                className="w-full border border-gray-200 rounded-lg px-3 py-2 text-xs text-gray-600 h-32 resize-none focus:outline-none"
+                className="w-full bg-white text-black border border-gray-200 rounded-lg px-3 py-2 text-xs h-32 resize-none focus:outline-none"
                 placeholder="El contenido de tu contexto aparecera aqui..."
               />
             </div>
@@ -151,7 +151,7 @@ export default function Configuracion() {
               value={apiKey}
               onChange={e => setApiKey(e.target.value)}
               placeholder="sk-ant-api03-..."
-              className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
+              className="w-full bg-white text-black border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono"
               required
             />
             {errorKey && <p className="text-red-500 text-sm">{errorKey}</p>}

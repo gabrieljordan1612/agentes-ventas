@@ -159,7 +159,7 @@ function AgenteChat() {
               }
             }}
             placeholder="Describe el caso del prospecto..."
-            className="flex-1 border border-gray-300 rounded-xl px-4 py-2.5 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 bg-white text-black border border-gray-300 rounded-xl px-4 py-2.5 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
             rows={2}
           />
           <button
